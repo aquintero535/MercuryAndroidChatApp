@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable name="viewModel" type="com.example.mercury.viewmodel.ConversacionViewModel" />
+        <variable name="vista" type="com.example.mercury.ui.ConversacionActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayoutActivityConversacion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.ConversacionActivity" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:animateLayoutChanges="true">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listaMensajes"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/colorGray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ImageButton
+                    android:id="@+id/botonDesplazar"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="true"
+                    android:cropToPadding="false"
+                    android:focusable="true"
+                    android:onClick="@{() -> vista.desplazarLista()}"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_baseline_expand_more_24"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/barraMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/design_default_color_background"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/botonEnviarImagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="@{() -> vista.abrirGaleria()}"
+                    android:scaleType="centerInside"
+                    android:tint="@color/design_default_color_on_primary"
+                    app:srcCompat="@drawable/ic_menu_gallery" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/campoMensaje"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Escribe un mensaje"
+                        android:text="@{String.valueOf(viewModel.strCampoMensaje)}"
+                        android:inputType="textLongMessage|textMultiLine"
+                        android:textColorHint="@android:color/tertiary_text_light" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <ImageButton
+                    android:id="@+id/botonEnviarMensaje"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foregroundGravity="center"
+                    android:onClick="@{() -> viewModel.enviarMensaje(campoMensaje.getEditText().getText().toString())}"
+                    android:src="@drawable/ic_baseline_send_24" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayoutItemFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                layout="@layout/item_fecha"
+                bind:fechaConversacion="@{String.valueOf(viewModel.strFechaConversacion)}" />
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Mercury</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Opciones</string>
+    <string name="action_agregar_contacto">Agregar contacto</string>
+
+    <string name="menu_conversacion">Conversaciones</string>
+    <string name="menu_contactos">Contactos</string>
+    <string name="menu_perfil">Perfil de usuario</string>
+
+    <string name="boton_cambiar_imagen">Cambiar imagen de perfil</string>
+    <string name="boton_cerrar_sesion">Cerrar sesión</string>
+
+    <string name="user_online">en línea</string>
+    <string name="user_offline">últ. vez</string>
+
+    <string name="home_second">Home Second</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_settings">Opciones</string>
+
+    <string name="preferences_header_usuario">Opciones de usuario</string>
+    <string name="preferences_usuario_nombre">Nombre para mostrar</string>
+    <string name="preferences_usuario_mensaje_perfil">Mensaje de perfil</string>
+    <string name="preferences_auth_header">Opciones de inicio de sesión</string>
+    <string name="preferences_usuario_correo">Correo electrónico</string>
+    <string name="preferences_usuario_contrasenia">Contraseña</string>
+    <string name="preferences_usuario_telefono">Número de teléfono</string>
+    <string name="title_activity_auth_settings">AuthSettingsActivity</string>
+</resources>

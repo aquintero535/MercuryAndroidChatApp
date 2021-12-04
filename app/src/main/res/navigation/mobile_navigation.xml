@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_conversaciones">
+
+    <fragment
+        android:id="@+id/nav_conversaciones"
+        android:name="com.example.mercury.ui.fragments.PrincipalFragment"
+        android:label="@string/menu_conversacion"
+        tools:layout="@layout/fragment_principal">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contactos"
+        android:name="com.example.mercury.ui.fragments.ContactosFragment"
+        android:label="@string/menu_contactos"
+        tools:layout="@layout/fragment_contactos" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.mercury.ui.fragments.PerfilUsuarioFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil_usuario" />
+</navigation>

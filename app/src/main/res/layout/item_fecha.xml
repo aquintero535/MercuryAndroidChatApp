@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <import type="android.view.View" />
+        <variable name="fechaConversacion" type="java.lang.String" />
+        <variable name="vista" type="com.example.mercury.ui.ConversacionActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutItemFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/layoutItemFechaConversacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edges"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textoItemFechaConversacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{fechaConversacion}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="yyyy-MM-dd" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ca34df98769738e365457a6ae49f9c8f",
+    "entities": [
+      {
+        "tableName": "conversacion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idConversacion` TEXT NOT NULL, `ultimo_mensaje` TEXT, `nombre_contacto` TEXT NOT NULL, `uidContacto` TEXT, `imagenPerfilContacto` TEXT, PRIMARY KEY(`idConversacion`))",
+        "fields": [
+          {
+            "fieldPath": "idConversacion",
+            "columnName": "idConversacion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ultimoMensaje",
+            "columnName": "ultimo_mensaje",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nombreContacto",
+            "columnName": "nombre_contacto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uidContacto",
+            "columnName": "uidContacto",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imagenPerfilContacto",
+            "columnName": "imagenPerfilContacto",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idConversacion"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ca34df98769738e365457a6ae49f9c8f\")"
+    ]
+  }
+}

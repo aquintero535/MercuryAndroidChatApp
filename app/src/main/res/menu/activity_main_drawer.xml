@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_conversaciones"
+            android:icon="@drawable/ic_baseline_chat_24"
+            android:title="@string/menu_conversacion" />
+        <item
+            android:id="@+id/nav_contactos"
+            android:icon="@drawable/ic_baseline_contacts_24"
+            android:title="@string/menu_contactos" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="@string/menu_perfil" />
+
+    </group>
+</menu>

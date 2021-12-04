@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.example.mercury.viewmodel.PerfilUsuarioViewModel" />
+        <variable name="vista" type="com.example.mercury.ui.fragments.PerfilUsuarioFragment" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        tools:context="com.example.mercury.ui.fragments.PerfilUsuarioFragment"
+        app:snackbar="@{viewModel.liveDataStatus}" >
+
+        <ImageView
+            android:id="@+id/perfilImagenPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="@{() -> vista.botonCambiarImagenPerfil()}"
+            android:src="@mipmap/ic_launcher"
+            app:profileImage="@{String.valueOf(viewModel.liveDataUsuario.data.imagenPerfil)}" />
+
+        <TextView
+            android:id="@+id/perfilTextoNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{String.valueOf(viewModel.liveDataUsuario.data.nombre)}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:visibility="visible"
+            tools:text="John Smith" />
+
+
+        <TextView
+            android:id="@+id/perfilTextoCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@{String.valueOf(viewModel.liveDataUsuario.data.email)}"
+            tools:text="johnsmith@example.com"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/perfilTextoMensajePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mensaje de perfil:" />
+
+                <TextView
+                    android:id="@+id/perfilTextoMensajePerfilUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(viewModel.liveDataUsuario.data.mensajePerfil)}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/botonEditarMensajePerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/ic_baseline_create_24"
+                android:backgroundTint="#504F4F"
+                android:padding="15dp"
+                android:onClick="@{() -> vista.botonEditarMensajePerfil()}" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/botonCerrarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/boton_cerrar_sesion"
+            android:onClick="@{() -> vista.botonCerrarSesion()}" />
+
+    </LinearLayout>
+
+</layout>
+
